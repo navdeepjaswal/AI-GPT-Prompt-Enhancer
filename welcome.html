@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to AI Prompt Enhancer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .welcome-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .welcome-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .welcome-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .welcome-header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .welcome-content {
+            padding: 40px 30px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: #667eea;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .getting-started {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        
+        .getting-started h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 16px;
+            padding-left: 40px;
+            position: relative;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .demo-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        
+        .demo-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        
+        .demo-image {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 40px;
+            margin: 16px 0;
+            border: 2px dashed #adb5bd;
+        }
+        
+        .demo-image::before {
+            content: "🔍 Google Search Bar with AI Enhance Button";
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 32px;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-container {
+                margin: 10px;
+            }
+            
+            .welcome-header {
+                padding: 30px 20px;
+            }
+            
+            .welcome-header h1 {
+                font-size: 28px;
+            }
+            
+            .welcome-content {
+                padding: 30px 20px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="welcome-header">
+            <h1>🎉 Welcome to AI Prompt Enhancer!</h1>
+            <p>Transform your Google searches with AI-powered prompt enhancement</p>
+        </div>
+        
+        <div class="welcome-content">
+            <p style="font-size: 18px; text-align: center; margin-bottom: 32px; color: #555;">
+                You're all set! This extension automatically integrates with Google's search bar to help you create better AI prompts and get more useful responses.
+            </p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Google Integration</h3>
+                    <p>Seamlessly integrates with Google's search interface - no popup needed!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Smart Enhancement</h3>
+                    <p>Automatically improve your search queries with clarity, context, and structure</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>One-Click Access</h3>
+                    <p>Click the "AI Enhance" button right in the Google search bar</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Tooltip Modal</h3>
+                    <p>Beautiful expanding modal that appears below the search bar</p>
+                </div>
+            </div>
+            
+            <div class="demo-section">
+                <h3>🎯 How It Works</h3>
+                <div class="demo-image"></div>
+                <p style="color: #666; font-size: 14px;">
+                    The extension automatically detects Google's search bar and adds an "AI Enhance" button. 
+                    Click it to open a modal where you can enhance your search query or prompt.
+                </p>
+            </div>
+            
+            <div class="getting-started">
+                <h3>🚀 Getting Started</h3>
+                <ol class="step-list">
+                    <li>Navigate to <strong>Google.com</strong> in your browser</li>
+                    <li>Look for the <strong>"AI Enhance"</strong> button next to the search bar</li>
+                    <li>Click the button to open the enhancement modal</li>
+                    <li>Enter your search query or prompt in the text area</li>
+                    <li>Select your preferred enhancement options</li>
+                    <li>Click "Enhance" to get your improved version</li>
+                    <li>Copy the enhanced prompt and use it anywhere!</li>
+                </ol>
+            </div>
+            
+            <div class="cta-section">
+                <button class="cta-button" id="start-btn">Start Enhancing!</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                Made with ❤️ for better AI interactions. 
+                <a href="#" id="help-link">Help</a> | 
+                <a href="#" id="feedback-link">Feedback</a>
+            </p>
+        </div>
+    </div>
+    
+    <script src="welcome.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+This file should contain a 48x48 pixel PNG icon for the Chrome extension.
+
+The icon should be:
+- 48x48 pixels in size
+- PNG format
+- Simple and recognizable
+- Related to AI or prompt enhancement (e.g., magic wand, sparkles, brain, etc.)
+- High contrast for visibility in the toolbar
+- Same design as the 16x16 icon but with more detail
+
+You can create this icon using:
+- Online icon generators
+- Design tools like Figma, Canva, or Adobe Illustrator
+- Icon libraries like Feather Icons, Heroicons, or Material Icons
+
+Example icon concepts:
+- ✨ Sparkles with "AI" text
+- 🧠 Brain with enhancement arrows
+- 🔮 Crystal ball with text bubbles
+- ⚡ Lightning bolt with "E" for enhance
+
+Note: This icon will be used in the extensions page and other larger display areas.
